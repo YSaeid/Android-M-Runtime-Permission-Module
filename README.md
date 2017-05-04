@@ -28,8 +28,9 @@ public class ActivityMain extends AppCompatActivityWithRequestPermission impleme
   public void onPermissionNotGranted() {
     // do Your work here for permission not granted
   }
-  ```
-This module is the easiest way to handle android M Runtime permission.
+```
+
+<p>This module is the easiest way to handle android M Runtime permission.
 just copy this 2 file in your project and extends your class of this two file.
 if you use Activity you must extends your class with AppCompatActivityWithRequestPermssion
-and if use fragment must extends FragmentWithRequestPermission
+and if use fragment must extends FragmentWithRequestPermission</p>
