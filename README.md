@@ -38,12 +38,14 @@ public class MyFragment extends FragmentWithRequestPermission implements AppComp
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    singleRequestPermission(Manifest.permission.CAMERA,
-      this,
-      "This App Need Some Permission",
-      "This App For Continue Working Need Camera Permission.Grant The Requested Permission To App Continue Working",
-      "OK",
-      "Cancel");
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      singleRequestPermission(Manifest.permission.CAMERA,
+        this,
+        "This App Need Some Permission",
+        "This App For Continue Working Need Camera Permission.Grant The Requested Permission To App Continue Working",
+        "OK",
+        "Cancel");
+    }
   }
 ```
 
@@ -75,7 +77,9 @@ public class MyFragment extends FragmentWithRequestPermission implements AppComp
       Manifest.permission.READ_CONTACTS,
       Manifest.permission.RECORD_AUDIO};
 
-    multipleRequestPermission(permissions , this, "Need Permission", "This App Need Some Permission.", "OK", "Cancel");
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      multipleRequestPermission(permissions, this, "Need Permission", "This App Need Some Permission.", "OK", "Cancel");
+    }
     
   }
 ```
@@ -102,7 +106,9 @@ public class MyFragment extends FragmentWithRequestPermission implements AppComp
 <h1>4 Just Check Single Permission is granted in activity or fragment do like this:</h1>
 
 ```javascript
-checkSinglePermissionIsGranted(Manifest.permission.CAMERA);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      checkSinglePermissionIsGranted(Manifest.permission.CAMERA);
+    }
 ```
 
 <h1>4.1 Just Check Multiple Permission is granted in activity or fragment do like this:</h1>
@@ -114,7 +120,9 @@ checkSinglePermissionIsGranted(Manifest.permission.CAMERA);
       Manifest.permission.READ_CONTACTS,
       Manifest.permission.RECORD_AUDIO};
 
-    checkMultiplePermissionIsGranted(permissions);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      checkMultiplePermissionIsGranted(permissions);
+    }
 ```
 
 <h1>HAVE FUN :)</h1>
