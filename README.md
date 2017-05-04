@@ -9,7 +9,29 @@
 public class ActivityMain extends AppCompatActivityWithRequestPermission implements AppCompatActivityWithRequestPermission.OnSinglePermissionStatus {
 ```
 
+<h1>OR</h1>
+
+```javascript 
+@Override
+public class MyFragment extends FragmentWithRequestPermission implements AppCompatActivityWithRequestPermission.OnSinglePermissionStatus {
+```
+
 <h1>3. For Single Check Permission Or Request Permission Do like This:</h1>
+
+```javascript 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    singleRequestPermission(Manifest.permission.CAMERA,
+      this,
+      "This App Need Some Permission",
+      "This App For Continue Working Need Camera Permission.Grant The Requested Permission To App Continue Working",
+      "OK",
+      "Cancel");
+  }
+```
+
 <p>This module is the easiest way to handle android M Runtime permission.
 just copy this 2 file in your project and extends your class of this two file.
 if you use Activity you must extends your class with AppCompatActivityWithRequestPermssion
