@@ -32,6 +32,20 @@ public class MyFragment extends FragmentWithRequestPermission implements AppComp
   }
 ```
 
+<h1>3.1 Do Your Work Here After Permission Grant Or Not:</h1>
+
+```javascript
+  @Override
+  public void onPermissionGranted() {
+    // do Your work here for granted permission
+  }
+
+  @Override
+  public void onPermissionNotGranted() {
+    // do Your work here for permission not granted
+  }
+```
+
 <p>This module is the easiest way to handle android M Runtime permission.
 just copy this 2 file in your project and extends your class of this two file.
 if you use Activity you must extends your class with AppCompatActivityWithRequestPermssion
